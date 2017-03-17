@@ -7,7 +7,7 @@ vor, die durch nicht erreichbare Server beim Kompilieren entstehen können.
 Anwendung:
 -------------------------------------
  
- ### Repository clonen
+### # Repository clonen
  
     mkdir git-repo
     cd git-repo
@@ -15,52 +15,15 @@ Anwendung:
     git clone https://github.com/freifunk-gluon/gluon.git
     cd gluon
  
- ### Ordnerstruktur anlegen
+### # Ordnerstruktur anlegen
  
     mkdir openwrt
-    mkdir build
-    mkdir build/ar71xx-generic
-    mkdir build/ar71xx-mikrotik
-    mkdir build/ar71xx-nand
-    mkdir build/brcm2708-bcm2708
-    mkdir build/brcm2708-bcm2709
-    mkdir build/mpc85xx-generic
-    mkdir build/ramips-mt7621
-    mkdir build/ramips-rt305x
-    mkdir build/sunxi
-    mkdir build/x86-64
-    mkdir build/x86-generic
-    mkdir build/x86-kvm_guest
-    mkdir build/x86-xen_domu
-    mkdir build/ar71xx-generic/openwrt
-    mkdir build/ar71xx-mikrotik/openwrt
-    mkdir build/ar71xx-nand/openwrt
-    mkdir build/brcm2708-bcm2708/openwrt
-    mkdir build/brcm2708-bcm2709/openwrt
-    mkdir build/mpc85xx-generic/openwrt
-    mkdir build/ramips-mt7621/openwrt
-    mkdir build/ramips-rt305x/openwrt
-    mkdir build/sunxi/openwrt
-    mkdir build/x86-64/openwrt
-    mkdir build/x86-generic/openwrt
-    mkdir build/x86-kvm_guest/openwrt
-    mkdir build/x86-xen_domu/openwrt
- 
-### Symlinks setzen
+    for TARGET in ar71xx-generic ar71xx-mikrotik ar71xx-nand brcm2708-bcm2708 brcm2708-bcm2709 mpc85xx-generic ramips-mt7621 ramips-rt305x sunxi x86-64 x86-generic x86-kvm_guest x86-xen_domu; do
+      mkdir -p build/$TARGET/openwrt
+    done
+
+### # Symlinks setzen
 
     ln -s ../gluon-build-dependencies/openwrt/dl openwrt/dl
-    ln -s ../gluon-build-dependencies/build/ar71xx-generic/openwrt/bin build/ar71xx-generic/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/ar71xx-mikrotik/openwrt/bin build/ar71xx-mikrotik/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/ar71xx-nand/openwrt/bin build/ar71xx-nand/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/brcm2708-bcm2708/openwrt/bin build/brcm2708-bcm2708/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/brcm2708-bcm2709/openwrt/bin build/brcm2708-bcm2709/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/mpc85xx-generic/openwrt/bin build/mpc85xx-generic/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/ramips-mt7621/openwrt/bin build/ramips-mt7621/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/ramips-rt305x/openwrt/bin build/ramips-rt305x/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/sunxi/openwrt/bin build/sunxi/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/x86-64/openwrt/bin build/x86-64/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/x86-generic/openwrt/bin build/x86-generic/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/x86-kvm_guest/openwrt/bin build/x86-kvm_guest/openwrt/bin
-    ln -s ../gluon-build-dependencies/build/x86-xen_domu/openwrt/bin build/x86-xen_domu/openwrt/bin
-    
- 
+    for f in build/*/openwrt/bin; do echo ln -s "../gluon-build-dependencies/$f" "$f"; done
+
