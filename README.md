@@ -27,3 +27,15 @@ Anwendung:
     ln -s ../gluon-build-dependencies/openwrt/dl openwrt/dl
     for f in build/*/openwrt/bin; do echo ln -s "../gluon-build-dependencies/$f" "$f"; done
 
+    ln -s ../gluon-build-dependencies/build/ar71xx-generic/openwrt/bin/ar71xx/packages/ ar71xx-generic/openwrt/bin/ar71xx/packages
+    ln -s ../gluon-build-dependencies/build/ar71xx-mikrotik/openwrt/bin/ar71xx/packages/ ar71xx-mikrotik/openwrt/bin/ar71xx/packages
+    ln -s ../gluon-build-dependencies/build/ar71xx-nand/openwrt/bin/ar71xx/packages/ ar71xx-nand/openwrt/bin/ar71xx/packages
+    ln -s ../gluon-build-dependencies/build/brcm2708-bcm2708/openwrt/bin/brcm2708/packages/ brcm2708-bcm2708/openwrt/bin/brcm2708/packages
+    ln -s ../gluon-build-dependencies/build/brcm2708-bcm2709/openwrt/bin/brcm2708/packages/ brcm2708-bcm2709/openwrt/bin/brcm2708/packages
+    ln -s ../gluon-build-dependencies/build/mpc85xx-generic/openwrt/bin/mpc85xx/packages/ mpc85xx-generic/openwrt/bin/mpc85xx/packages
+    ln -s ../gluon-build-dependencies/build/ramips-mt7621/openwrt/bin/ramips/packages/ ramips-mt7621/openwrt/bin/ramips/packages
+    ln -s ../gluon-build-dependencies/build/ramips-rt305x/openwrt/bin/ramips/packages/ ramips-rt305x/openwrt/bin/ramips/packages
+    ln -s ../gluon-build-dependencies/build/x86-generic/openwrt/bin/x86/packages/ x86-generic/openwrt/bin/x86/packages
+    ln -s ../gluon-build-dependencies/build/x86-kvm_guest/openwrt/bin/x86/packages/ x86-kvm_guest/openwrt/bin/x86/packages
+    ln -s ../gluon-build-dependencies/build/x86-xen_domu/openwrt/bin/x86/packages/ x86-xen_domu/openwrt/bin/x86/packages
+    ln -s ../gluon-build-dependencies/build/sunxi/openwrt/bin/sunxi/packages/ sunxi/openwrt/bin/sunxi/packages
